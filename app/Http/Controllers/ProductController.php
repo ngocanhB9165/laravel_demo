@@ -48,6 +48,7 @@ class ProductController extends Controller
        try {
          $request->merge(['image'=>$file_name]);
          Product::create($request->all());
+         
          return redirect()->route('product.index')->with('success','Thêm mới thành công');
        } catch (\Throwable $th) {
             dd($th);
